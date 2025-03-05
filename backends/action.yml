@@ -1,0 +1,15 @@
+name: diff workspaces
+description: Checking if a workspace version between 2 commits
+
+inputs:
+  backends:
+    required: false
+    description: a list of supported backends to use (order or priority)
+
+outputs:
+  backends:
+    description: "Array<{ MANIFEST: string, PM: string, VERSION: string }>"
+
+runs:
+  using: "node20"
+  main: "./index.js"

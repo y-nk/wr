@@ -1,0 +1,56 @@
+name: diff workspaces
+description: Checking if a workspace version between 2 commits
+
+inputs:
+  base:
+    required: true
+    description: git base ref to calculate diff
+
+  head:
+    required: true
+    description: git head ref to calculate diff
+
+  backends:
+    required: false
+    description: a list of supported backends to use (order or priority)
+
+outputs:
+  all:
+    description: "Array<{ name: string, path: string, version: string, pm: string, eval: string }>"
+
+  all-count:
+    description: "number"
+
+  all-md:
+    description: "string"
+
+  modified:
+    description: "Array<{ name: string, path: string, version: string, pm: string, eval: string }>"
+
+  modified-count:
+    description: "number"
+
+  modified-md:
+    description: "string"
+
+  bumped:
+    description: "Array<{ name: string, path: string, version: string, pm: string, eval: string }>"
+
+  bumped-count:
+    description: "number"
+
+  bumped-md:
+    description: "string"
+
+  conflicting:
+    description: "Array<{ name: string, path: string, version: string, pm: string, eval: string }>"
+
+  conflicting-count:
+    description: "number"
+
+  conflicting-md:
+    description: "string"
+
+runs:
+  using: "node20"
+  main: "./index.js"

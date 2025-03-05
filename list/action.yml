@@ -1,0 +1,21 @@
+name: list workspaces
+description: get all workspaces of a monorepo
+
+inputs:
+  backends:
+    required: false
+    description: a list of supported backends to use (order or priority)
+
+outputs:
+  scopes:
+    description: "string"
+
+  shortnames:
+    description: "string[]"
+
+  workspaces:
+    description: "string[]"
+
+runs:
+  using: "node20"
+  main: "./index.js"
