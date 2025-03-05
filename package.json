@@ -1,0 +1,26 @@
+{
+  "name": "wr",
+  "version": "1.0.0",
+  "scripts": {
+    "build:backends": "esbuild src/actions/backends.ts --bundle --platform=node --target=node20 --minify --outfile=backends/index.js",
+    "build:diff": "esbuild src/actions/diff.ts --bundle --platform=node --target=node20 --minify --outfile=diff/index.js",
+    "build:list": "esbuild src/actions/list.ts --bundle --platform=node --target=node20 --minify --outfile=list/index.js",
+    "build:resolve": "esbuild src/actions/resolve.ts --bundle --platform=node --target=node20 --minify --outfile=resolve/index.js",
+    "build": "pnpm build:backends; pnpm build:diff; pnpm build:list; pnpm build:resolve"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "glob": "^11.0.1",
+    "semver": "^7.7.1",
+    "toml": "^3.0.0",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@types/semver": "^7.5.8",
+    "esbuild": "^0.25.0",
+    "knip": "^5.45.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  }
+}
