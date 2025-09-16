@@ -1,0 +1,4 @@
+module(
+  name = "bazel",
+  version = "1.0.0"
+)
